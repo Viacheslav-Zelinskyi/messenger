@@ -1,5 +1,5 @@
-import Auth from "pages/Auth";
-import { Redirect } from "react-router-dom";
+import { Auth, Home } from "pages";
+import { Redirect, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -7,7 +7,12 @@ function App() {
       {window.location.pathname === "/" ? (
         <Redirect to="/login"></Redirect>
       ) : null}
-      <Auth></Auth>
+      <Route path={["/login", "/register"]}>
+        <Auth/>
+      </Route>
+      <Route path="/im">
+        <Home/>
+      </Route>
     </div>
   );
 }

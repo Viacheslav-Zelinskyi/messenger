@@ -332,6 +332,7 @@ module.exports = function (webpackEnv) {
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
+          styles: path.join(__dirname, 'src/styles')
         }),
         ...(modules.webpackAliases || {}),
       },
